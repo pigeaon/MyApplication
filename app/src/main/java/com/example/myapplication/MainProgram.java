@@ -25,7 +25,7 @@
 //	private final Color[] COLORS = { Color.white, Color.red, Color.green, Color.yellow, Color.orange, Color.blue };
 //	private JCheckBox checkBoxShowStr;
 //	private JButton buttonRandom;
-//	private JCheckBox checkBoxUseSep;
+//	private JCheckBox checkBoxUseSep;//
 //
 //	private JButton Solve;
 //	private JLabel jLabel2;

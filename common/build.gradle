@@ -39,6 +39,10 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$rootProject.ext.supportVersion"
     //如今recyclerview与appcompat版本号并不配套，suportversion意义存疑
     implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+    implementation"net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    implementation "com.google.android.material:material:1.1.0"
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeversion"
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
 

@@ -39,4 +39,8 @@ ext{
     //依赖库相关
     supportVersion = '1.0.2'
     butterknifeversion = '10.2.1'
+
+    geniusVersion = '2.0.0'
+    glideVersion = '3.7.0'
+    circleimageviewVersion = '2.1.0'
 }

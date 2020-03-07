@@ -30,11 +30,11 @@ public abstract class Fragment extends androidx.fragment.app.Fragment{
         //初始化当前的根布局，但不在创建时添加到container
        View root = inflater.inflate(layId,container,false);
        initWidget(root);
+       mRoot=root;
        }else {
            if (mRoot.getParent() != null){
                ((ViewGroup)mRoot.getParent()).removeView(mRoot);
            }
-
        };
         return mRoot;
     }

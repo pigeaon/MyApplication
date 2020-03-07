@@ -26,8 +26,8 @@ public abstract class Activity extends AppCompatActivity {
             //得到界面id并进行设置，如果只是getContentLayoutId只是单纯获取。
             int layId = getContentLayoutId();
             setContentView(layId);
-            initData();
             initWidget();
+            initData();
         }else{
             finish();
         }

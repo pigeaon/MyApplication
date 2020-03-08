@@ -13,9 +13,10 @@
         android:layout_height="match_parent"
         android:text="home"
         android:gravity="center"/>
-    <net.qiujuer.genius.ui.widget.Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/action_group"/>
+<com.example.common.widget.GalleryView
+    android:id="@+id/galleryView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="1dp"/>
 
 </FrameLayout>

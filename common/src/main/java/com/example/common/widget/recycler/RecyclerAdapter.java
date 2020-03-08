@@ -200,6 +200,18 @@ public abstract class RecyclerAdapter<Data>
         this.mListerner = adapterListerner;
     }
 
+    @Override
+    public void update(Data data,ViewHolder<Data> holder){
+        int pos = holder.getAdapterPosition();
+        if(pos>=0){
+            //进行数据移除与更新
+             mDataList.remove(pos);
+             mDataList.add(pos,data);
+             //通知更新
+             notifyItemChanged(pos);
+        }
+    }
+
     /**
      * 自定义监听器
      * @param <Data>
@@ -250,4 +262,18 @@ public abstract class RecyclerAdapter<Data>
         }
 
     }
+    public static abstract class  AdapterListernerImpl<Data> implements AdapterListerner<Data>{
+
+        @Override
+        public void onItemClick(ViewHolder holder, Data data) {
+
+        }
+
+        @Override
+        public void onItemLongClick(ViewHolder holder, Data data) {
+
+        }
+    }
+
+
 }

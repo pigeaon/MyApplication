@@ -1,16 +1,10 @@
 package com.example.common.widget;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.database.Cursor;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.CheckBox;
@@ -30,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.common.R;
 import com.example.common.widget.recycler.RecyclerAdapter;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -68,7 +63,7 @@ public class GalleryView extends RecyclerView {
     private void init() {
         setLayoutManager(new GridLayoutManager(getContext(),4));
         setAdapter(mAdapter);
-        mAdapter.setListerner(new RecyclerAdapter.AdapterListernerImpl<Image>() {
+        mAdapter.setListerner(new RecyclerAdapter.AdapterListenerImpl<Image>() {
             @Override
             public void onItemClick(RecyclerAdapter.ViewHolder holder, Image image) {
             //如果cell点击被允许，更新响应状态
@@ -120,7 +115,8 @@ public class GalleryView extends RecyclerView {
             notifySelectChanged();
         }
 
-        return notifyRefresh;
+
+        return true;
     }
 
     public String[] getSelectedPath(){
@@ -307,5 +303,6 @@ public class GalleryView extends RecyclerView {
     public interface SelectChangeListener{
         void onSelectCountChange(int count);
     }
+
 
 }

@@ -23,6 +23,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.example.common.app.Activity;
 import com.example.common.widget.PortraitView;
+import com.example.myapplication.activities.AccountActivity;
 import com.example.myapplication.frags.main.ActiveFragment;
 import com.example.myapplication.frags.main.ContactFragment;
 import com.example.myapplication.frags.main.GroupFragment;
@@ -99,7 +100,7 @@ public class SecondActivity extends Activity
 
     @OnClick(R.id.btn_action)
     void onActionClick(){
-
+        AccountActivity.show(this);
     }
 
     @Override

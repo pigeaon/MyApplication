@@ -262,7 +262,7 @@ public abstract class RecyclerAdapter<Data>
         }
 
     }
-    public static abstract class  AdapterListernerImpl<Data> implements AdapterListerner<Data>{
+    public static abstract class AdapterListenerImpl<Data> implements AdapterListerner<Data>{
 
         @Override
         public void onItemClick(ViewHolder holder, Data data) {

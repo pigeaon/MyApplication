@@ -4,6 +4,8 @@
 
     <color name="white">#FFFFFF</color><!--白色 -->
 
+    <color name="white_40">#40FFFFFF</color><!--白色 -->
+
     <color name="ivory">#FFFFF0</color><!--象牙色 -->
 
     <color name="lightyellow">#FFFFE0</color><!--亮黄色 -->

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import com.bumptech.glide.Glide;
 import com.example.common.app.Application;
 import com.example.common.app.Fragment;
 import com.example.common.widget.PortraitView;
+import com.example.factory.Factory;
+import com.example.factory.net.UploadHelper;
 import com.example.myapplication.R;
 import com.example.myapplication.media.GalleryFragment;
 import com.yalantis.ucrop.UCrop;
@@ -29,7 +32,7 @@ import static android.app.Activity.RESULT_OK;
  * A simple {@link Fragment} subclass.
  */
 public class UpdateInforFragment extends Fragment {
-
+    private static final String TAG = "UpdateInforFragment";
     @BindView(R.id.im_portrait)
     PortraitView mPortrait;
 
@@ -93,5 +96,15 @@ public class UpdateInforFragment extends Fragment {
                 .asBitmap()
                 .centerCrop()
                 .into(mPortrait);
+        String localPath = uri.getPath();
+        Log.e(TAG, "loadPortrait: "+localPath );
+        Factory.runOnAsync(new Runnable() {
+            @Override
+            public void run() {
+                String url = UploadHelper.uploadPortraits(localPath);
+                Log.e(TAG, "run: "+url );
+            }
+        });
+
     }
 }

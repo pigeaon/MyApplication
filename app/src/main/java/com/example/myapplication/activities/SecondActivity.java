@@ -1,9 +1,10 @@
-package com.example.myapplication;
+package com.example.myapplication.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -23,7 +24,10 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.example.common.app.Activity;
 import com.example.common.widget.PortraitView;
+import com.example.myapplication.MainActivity;
+import com.example.myapplication.R;
 import com.example.myapplication.activities.AccountActivity;
+import com.example.myapplication.frags.assist.PermissionFragment;
 import com.example.myapplication.frags.main.ActiveFragment;
 import com.example.myapplication.frags.main.ContactFragment;
 import com.example.myapplication.frags.main.GroupFragment;
@@ -58,6 +62,14 @@ public class SecondActivity extends Activity
     @BindView(R.id.btn_action)
     FloatActionButton mAction;
 
+    /**
+     * 主activity入口
+     * @param context
+     */
+    public static void show(Context context){
+        context.startActivity(new Intent(context, SecondActivity.class));
+    }
+
     private NavHelper<Integer> mNavHelp;
     @Override
     protected void initWidget() {
@@ -81,6 +93,8 @@ public class SecondActivity extends Activity
                         this.view.setBackground(resource.getCurrent());
                     }
                 });
+
+        PermissionFragment.haveAll(this,getSupportFragmentManager());
     }
 
     @Override

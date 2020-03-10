@@ -20,8 +20,8 @@ import butterknife.BindView;
  */
 public class ActiveFragment extends Fragment {
 
-    @BindView(R.id.galleryView)
-    GalleryView mGalley;
+//    @BindView(R.id.galleryView)
+//    GalleryView mGalley;
 
     public ActiveFragment() {
         // Required empty public constructor
@@ -30,12 +30,12 @@ public class ActiveFragment extends Fragment {
     @Override
     protected void initData() {
         super.initData();
-        mGalley.setup(getLoaderManager(), new GalleryView.SelectChangeListener() {
-            @Override
-            public void onSelectCountChange(int count) {
-
-            }
-        });
+//        mGalley.setup(getLoaderManager(), new GalleryView.SelectChangeListener() {
+//            @Override
+//            public void onSelectCountChange(int count) {
+//
+//            }
+//        });
     }
 
     @Override

@@ -43,12 +43,6 @@ implements GalleryView.SelectChangeListener {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        mGallery.setup(getLoaderManager(),this);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // 获取galleryView
@@ -57,6 +51,11 @@ implements GalleryView.SelectChangeListener {
         return root;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        mGallery.setup(getLoaderManager(),this);
+    }
     @Override
     public void onSelectCountChange(int count) {
         if(count>0){
@@ -89,7 +88,10 @@ implements GalleryView.SelectChangeListener {
         void onSelectedImage(String path);
     }
 
-    private static class TransStatusBottomSheetDialog extends BottomSheetDialog{
+    /**
+     * 解决无法显示底部dialogFragment
+     */
+    public static class TransStatusBottomSheetDialog extends BottomSheetDialog{
 
         public TransStatusBottomSheetDialog(@NonNull Context context) {
             super(context);

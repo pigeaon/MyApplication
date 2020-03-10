@@ -1,25 +1,26 @@
 <resources>
 
     <style name="AppTheme" parent="AppTheme.Base">
-<!--        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>-->
-<!--        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>-->
-<!--        <item name="actionOverflowButtonStyle">@style/Widget.AppCompat.ActionButton.Overflow</item>-->
-<!--        <item name="actionOverflowMenuStyle">@style/Widget.AppCompat.PopupMenu.Overflow</item>-->
-<!--顶部导航条中的ICON和二级字体颜色-->
+        <!--        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>-->
+        <!--        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>-->
+        <!--        <item name="actionOverflowButtonStyle">@style/Widget.AppCompat.ActionButton.Overflow</item>-->
+        <!--        <item name="actionOverflowMenuStyle">@style/Widget.AppCompat.PopupMenu.Overflow</item>-->
+        <!--顶部导航条中的ICON和二级字体颜色-->
         <item name="colorControlNormal">@color/white</item>
         <item name="colorControlActivated">@color/textPrimary</item>
     </style>
 
     <style name="AppTheme.TransStatusBar.Base" parent="AppTheme">
-<!--        去除顶部的状态栏-->
+        <!--        去除顶部的状态栏-->
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowFrame">@null</item>
     </style>
-<!---->
+    <!---->
 
     <style name="AppTheme.Account" parent="AppTheme.TransStatusBar" />
+
     <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base" />
 
     <style name="AppTheme.Main" parent="AppTheme.TransStatusBar">
@@ -33,4 +34,13 @@
         <item name="android:textSize">?attr/toolbarTitleSize</item>
         <item name="android:textColor">?attr/toolbarTitleColor</item>
     </style>
+
+    <style name="AppTheme.Base.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Base.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.Base.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
